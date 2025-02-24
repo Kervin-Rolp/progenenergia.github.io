@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TURNOS E APR | Progen Energía</title>
+    <link rel="stylesheet" href="/am.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Progen Energía</h2>
+      <ul>
+        <li><a href="/dashboard.html">🏗️ Consultas Obras</a></li>
+        <li><a href="/am.html">📈 Consultas AM</a></li>
+        <li><a href="/turno.html">⏰ Turnos, APR</a></li>
+        <li><a href="/velocidade.html">⚡ Velocidade</a></li>
+        <li><a href="/programacao.html">🔌 Programação</a></li>
+        <li><a href="/equipes.html">👥 Equipes</a></li>
+        <!--   <li>
+          <a href="/progen-energia/index.html" onclick="cerrarSesion()"
+            >🚪 Sair</a
+          >
+        </li> -->
+      </ul>
+    </div>
+    <div class="main-content">
+      <header>
+        <h1>TURNOS E APR</h1>
+      </header>
+
+      <div class="container">
+        <input
+          type="text"
+          id="searchInput"
+          onkeyup="filtrarTabla()"
+          placeholder="Pesquisar..."
+        />
+
+        <table id="">
+          <thead>
+            <tr>
+              <th>Equipes</th>
+              <th>Turno</th>
+              <th>APR</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="mini-map"></div>
+
+    <script src="/turno.js"></script>
+  </body>
+</html>

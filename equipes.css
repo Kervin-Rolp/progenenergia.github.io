@@ -1,0 +1,193 @@
+/* RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ESTILOS GENERALES */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #e3c148;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 22px;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  margin: 15px 0;
+}
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+  display: block;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* CONTENIDO PRINCIPAL */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  transition: margin-left 0.3s;
+}
+header {
+  background: #e3c148;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+header input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 15px auto 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+}
+
+/* CONTENEDOR */
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* LISTA DE EQUIPOS */
+#equiposLista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sección por supervisor */
+.supervisor {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.supervisor h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #e3c148;
+}
+
+/* Contenedor de tarjetas de equipo: disposición en rejilla (flex) */
+.teams-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Tarjeta de equipo */
+.team-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: calc(33% - 20px);
+  min-width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado del equipo: círculo + prefijo */
+.team-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.team-circle {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.team-prefix {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Lista de detalles del equipo */
+.team-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+.team-card ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .team-card {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 480px) {
+  .team-card {
+    width: 100%;
+  }
+}
+
+/* MODO OSCURO */
+.dark-mode {
+  background-color: #222;
+  color: #f5f5f5;
+}
+.dark-mode .main-content {
+  background: #222;
+}
+.dark-mode .container {
+  background: #333;
+  color: #f5f5f5;
+}
+.dark-mode header {
+  background: #444;
+}
+.dark-mode .sidebar {
+  background: #444;
+}
+.dark-mode .sidebar ul li a {
+  color: #f5f5f5;
+}
+.dark-mode .team-card {
+  background: #555;
+  border: 1px solid #666;
+}
+/*.dark-mode .team-card h3,\n.dark-mode .team-card ul li,\n.dark-mode .team-prefix {\n  color: #f5f5f5;\n}*/

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progen Energía</title>
+    <link rel="stylesheet" href="/dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Obras | Progen Energía</h2>
+      <ul>
+        <li><a href="/dashboard.html">🏗️ Consultas Obras</a></li>
+        <li><a href="/am.html">📈 Consultas AM</a></li>
+        <li><a href="/turno.html">⏰ Turnos, APR</a></li>
+        <li><a href="/velocidade.html">⚡ Velocidade</a></li>
+        <li><a href="/programacao.html">🔌 Programação</a></li>
+        <li><a href="/equipes.html">👥 Equipes</a></li>
+        <!--   <li>
+          <a href="/progen-energia/index.html" onclick="cerrarSesion()"
+            >🚪 Sair</a
+          >
+        </li> -->
+      </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <!-- Barra superior con flex -->
+      <div class="top-bar">
+        <button class="sidebar-toggle">☰</button>
+        <button id="modoOscuro" class="modo-btn">🌙 Modo Oscuro</button>
+
+        <!-- NUEVO: Select para filtrar la estación -->
+        <select id="estacaoFilter">
+          <option value="">Todas</option>
+          <option value="Erechim">Erechim</option>
+          <option value="Lagoa Vermelha">Lagoa Vermelha</option>
+        </select>
+
+        <input type="text" id="buscador" placeholder="Buscar..." />
+      </div>
+
+      <!-- Contenedor principal -->
+      <div class="container">
+        <!-- Loader -->
+        <div id="loader">Cargando datos...</div>
+
+        <div class="table-container">
+          <table id="tablaEquipos">
+            <thead>
+              <tr>
+                <th scope="col">Tipo</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Data</th>
+                <th scope="col">Hora de Inicio</th>
+                <th scope="col">Estação</th>
+                <th scope="col">Nota de Serviço</th>
+                <th scope="col">Equipes</th>
+                <th scope="col">Município</th>
+                <th scope="col">Necessidade</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="legend" class="legend-container"></div>
+      </div>
+    </div>
+
+    <script src="/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão de Equipes | Progen Energía</title>
+    <link rel="stylesheet" href="/equipes.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Progen Energía</h2>
+      <ul>
+        <li><a href="/dashboard.html">🏗️ Consultas Obras</a></li>
+        <li><a href="/am.html">📈 Consultas AM</a></li>
+        <li><a href="/turno.html">⏰ Turnos, APR</a></li>
+        <li><a href="/velocidade.html">⚡ Velocidade</a></li>
+        <li><a href="/programacao.html">🔌 Programação</a></li>
+        <li><a href="/equipes.html">👥 Equipes</a></li>
+        <!--   <li>
+          <a href="/progen-energia/index.html" onclick="cerrarSesion()"
+            >🚪 Sair</a
+          >
+        </li> -->
+      </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <header>
+        <h1>Gestão de Equipes</h1>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Pesquisar equipe ou supervisor..."
+          onkeyup="filtrarEquipos()"
+        />
+      </header>
+
+      <div class="container">
+        <div id="equiposLista">
+          <!-- Aquí se generará dinámicamente la lista de equipos por supervisor -->
+        </div>
+      </div>
+    </div>
+
+    <script src="/equipes.js"></script>
+  </body>
+</html>

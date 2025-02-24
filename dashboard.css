@@ -1,0 +1,317 @@
+/* RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ESTILOS GENERALES */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+  display: flex; /* Para que el sidebar y el contenido estén en la misma línea */
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #e3c148;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre elementos */
+  margin-bottom: 20px;
+}
+
+/* Botón de la sidebar (sin posición absoluta) */
+.sidebar-toggle {
+  background: #e3c148;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s;
+  /* Elimina position: fixed/absolute y left, top */
+}
+
+.sidebar-toggle:hover {
+  background: #c7a638;
+}
+
+/* Ajuste del contenedor principal */
+.main-content {
+  margin-left: 250px; /* Respeto al sidebar */
+  padding: 20px;
+  transition: margin-left 0.3s;
+  width: calc(100% - 250px);
+}
+
+/* Ajuste de la .container para que no afecte la top-bar */
+.container {
+  max-width: 100%;
+  margin: auto;
+  background: transparent;
+}
+
+/* LOADER */
+#loader {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
+  display: none; /* Oculto por defecto */
+}
+
+/* TABLA */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Para evitar que se contraiga demasiado */
+}
+
+th {
+  background: rgb(227, 193, 72);
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+td:last-child {
+  border-right: none;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* CLASES PARA COLORES DE ESTADOS (APLICA EN TABLA Y LEYENDA) */
+.estado {
+  font-weight: bold;
+  text-align: center;
+  color: #fff; /* Por defecto, texto en blanco */
+}
+
+.concluido {
+  background: green !important;
+}
+
+.cancelado {
+  background: red !important;
+}
+
+.aguardando {
+  background: orange !important;
+}
+
+.elaboracao {
+  background: blue !important;
+}
+
+.execucao {
+  background: purple !important;
+}
+
+.default {
+  background: gray !important;
+}
+
+/* LEYENDA */
+/* Leyenda en modo claro (por defecto) */
+.legend-container {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  color: #333;
+}
+
+/* Leyenda en modo oscuro */
+.dark-mode .legend-container {
+  background: #444;
+  color: #f5f5f5;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .legend-container h3 {
+  color: #f5f5f5;
+}
+
+/* Reafirmamos los colores de los círculos en modo oscuro */
+.dark-mode .legend-color.concluido {
+  background: green !important;
+}
+
+.dark-mode .legend-color.cancelado {
+  background: red !important;
+}
+
+.dark-mode .legend-color.aguardando {
+  background: orange !important;
+}
+
+.dark-mode .legend-color.elaboracao {
+  background: blue !important;
+}
+
+.dark-mode .legend-color.execucao {
+  background: purple !important;
+}
+
+.dark-mode .legend-color.default {
+  background: gray !important;
+}
+
+/* Reglas generales para los círculos */
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* MODO OSCURO */
+.dark-mode {
+  background-color: #222;
+  color: #f5f5f5;
+}
+
+.dark-mode .table-container {
+  background-color: #333;
+}
+
+.dark-mode th {
+  background: #444;
+}
+
+.dark-mode td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .sidebar {
+  background: #444;
+}
+
+.dark-mode .sidebar ul li a {
+  color: #f5f5f5;
+}
+
+.modo-btn {
+  background: #e3c148;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.modo-btn:hover {
+  background: #c7a638;
+}
+
+/* RESPONSIVE (MÓVILES) */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    left: 10px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .table-container {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+}

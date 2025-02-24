@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitor de Velocidad | Progen Energía</title>
+    <!-- Enlaza tu CSS -->
+    <link rel="stylesheet" href="/velocidade.css" />
+    <!-- Fuente Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Progen Energía</h2>
+      <ul>
+        <li><a href="/dashboard.html">🏗️ Consultas Obras</a></li>
+        <li><a href="/am.html">📈 Consultas AM</a></li>
+        <li><a href="/turno.html">⏰ Turnos, APR</a></li>
+        <li><a href="/velocidade.html">⚡ Velocidade</a></li>
+        <li><a href="/programacao.html">🔌 Programação</a></li>
+        <li><a href="/equipes.html">👥 Equipes</a></li>
+        <!--   <li>
+          <a href="/progen-energia/index.html" onclick="cerrarSesion()"
+            >🚪 Sair</a
+          >
+        </li> -->
+      </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <header>
+        <h1>Monitor de Velocidade</h1>
+        <!-- Campo de búsqueda -->
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Pesquise por placas, tipo, responsável..."
+          onkeyup="filtrarTabla()"
+        />
+      </header>
+
+      <div class="container">
+        <!-- Contenedor con scroll para la tabla -->
+        <div class="table-responsive">
+          <table id="tablaVelocidade">
+            <thead>
+              <tr>
+                <th>Placas</th>
+                <th>Equipe</th>
+                <th>Tipo</th>
+                <th>Límite</th>
+                <th>Setor</th>
+                <th>Responsável</th>
+                <!-- Semana 06 -->
+                <th colspan="7">Semana 06</th>
+                <!-- Semana 07 -->
+                <th colspan="7">Semana 07</th>
+                <!-- Semana 08 -->
+                <th colspan="7">Semana 08</th>
+                <!-- Semana 09 -->
+                <th colspan="7">Semana 09</th>
+              </tr>
+              <tr>
+                <!-- Esta celda abarca las 6 columnas fijas -->
+                <th colspan="6"></th>
+                <!-- Días de la semana 06 -->
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <!-- Días de la semana 07 -->
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <!-- Días de la semana 08 -->
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <!-- Días de la semana 09 -->
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+                <th>28</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Se llenará dinámicamente con JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Aquí se inyectará la leyenda de excesos desde JS -->
+    </div>
+
+    <!-- Enlaza tu archivo JavaScript -->
+    <script src="/velocidade.js"></script>
+  </body>
+</html>
