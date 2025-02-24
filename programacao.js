@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Se muestra un ejemplo genérico:
       const dataExecucao = dato["DATA EXECUÇÃO"] || dato["DataExecucao"] || "";
       const numeroNota = dato["Nº DA NOTA"] || dato["NumeroNota"] || "";
+      const estado = dato["CIDADE"] || "cidade";
       const numeroDocumento =
         dato["Nº Documento"] || dato["NumeroDocumento"] || "";
       const estado = dato["Estado"] || "";
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Crear celdas en el orden que aparece en el <thead>
       crearCelda(fila, dataExecucao);
       crearCelda(fila, numeroNota);
+      crearCelda(fila, cidade);
       crearCelda(fila, numeroDocumento);
 
       // Estado con color de fondo
